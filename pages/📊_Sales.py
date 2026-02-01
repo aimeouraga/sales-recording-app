@@ -7,6 +7,39 @@ from datetime import datetime
 DATA_DIR = "data"
 FILE_PATH = os.path.join(DATA_DIR, "sales.csv")
 
+# ---- GLOBAL STYLE ----
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: white;
+        color: #1f2937;
+    }
+
+    h1, h2, h3, h4, h5 {
+        color: #111827;
+    }
+
+    p, label, div {
+        color: #1f2937;
+    }
+
+    .stButton>button {
+        background-color: #2563eb;
+        color: white;
+        border-radius: 6px;
+    }
+
+    .stMetric {
+        background-color: #f9fafb;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Ensure data directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
 
