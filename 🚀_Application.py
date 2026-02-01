@@ -22,7 +22,7 @@ st.markdown(
     }
 
     p, label, div {
-        color: #1f2937;
+        color: #D4AF37;
     }
 
     .stButton>button {
@@ -41,19 +41,33 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Sidebar
+# Force sidebar background to white
+st.markdown(
+    """
+    <style>
+        background-color: #D4AF37;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebar"] * {
+            color: white !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Sidebar content
 with st.sidebar:
-    st.image("assets/logo1.png", width=200)
-    st.title("📊 Sales App")
-    st.write("Simple sales recording system.")
-    st.markdown("---")
-    st.write("Navigate using the menu above.")
-
-
-# Main page content
-st.title("🚀 The best app for your business")
-st.image("assets/logo1.png", width=300)
-st.write(
+    st.markdown("<h2 style='text-align: center;'>📊 Sales App</h2>", unsafe_allow_html=True)
+    #st.write("Simple sales recording system.")
+    st.write(
     """
     This **Sales Recording Application** allows merchants to easily:
     - Record daily sales
@@ -62,7 +76,17 @@ st.write(
     - Visualize performance with metrics
     - Track business growth
     - Learn about the application creator
+    """
+)
+    st.markdown("---")
+    #st.write("Navigate using the menu above.")
 
-    👉 Use the **menu on the left** to get started.
+
+# Main page content
+st.title("🚀 The best app for your business")
+st.image("assets/logo1.png", width=650)
+st.write(
+    """
+    👈 Use the **menu on the left** to get started.
     """
 )

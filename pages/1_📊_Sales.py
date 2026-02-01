@@ -2,17 +2,20 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
+import base64
 
-# File path
+
+# File path #D4AF37
 DATA_DIR = "data"
 FILE_PATH = os.path.join(DATA_DIR, "sales.csv")
+
 
 # ---- GLOBAL STYLE ----
 st.markdown(
     """
     <style>
     .stApp {
-        background-color: white;
+        #background-color: white;
         color: #1f2937;
     }
 
@@ -21,12 +24,12 @@ st.markdown(
     }
 
     p, label, div {
-        color: #1f2937;
+        color: #D4AF37;
     }
 
     .stButton>button {
         background-color: #2563eb;
-        color: white;
+        color: white !important;
         border-radius: 6px;
     }
 
@@ -39,6 +42,23 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+# Sidebar content
+with st.sidebar:
+    st.markdown("<h2 style='text-align: center;'>📊 Sales App</h2>", unsafe_allow_html=True)
+    #st.write("Simple sales recording system.")
+    st.write(
+    """
+    This **Sales Recording Application** allows merchants to easily:
+    - Record daily sales
+    - Automatically calculate totals
+    - View sales history
+    - Visualize performance with metrics
+    - Track business growth
+    - Learn about the application creator
+    """
+)
+    st.markdown("---")
 
 # Ensure data directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -98,4 +118,5 @@ else:
 # Display sales table
 st.markdown("---")
 st.subheader("🧾 Sales History")
+st.write("Tous les montants sont exprimés en francs CFA.")
 st.dataframe(df, use_container_width=True)

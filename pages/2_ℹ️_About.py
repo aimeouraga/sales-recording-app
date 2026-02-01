@@ -5,7 +5,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: white;
+        #background-color: white;
         color: #1f2937;
     }
 
@@ -14,7 +14,7 @@ st.markdown(
     }
 
     p, label, div {
-        color: #1f2937;
+        color: #D4AF37;
     }
 
     .stButton>button {
@@ -32,6 +32,9 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+with st.sidebar:
+    st.markdown("---", unsafe_allow_html=True)
 
 st.title("ℹ️ About This Application")
 
