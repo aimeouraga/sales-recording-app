@@ -6,7 +6,7 @@ st.markdown(
     <style>
     .stApp {
         #background-color: white;
-        color: #1f2937;
+        #color: #1f2937;
     }
 
     h1, h2, h3, h4, h5 {
