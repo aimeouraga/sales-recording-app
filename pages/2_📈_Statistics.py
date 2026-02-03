@@ -4,6 +4,40 @@ import os
 
 FILE_PATH = os.path.join("data", "sales.csv")
 
+# ---- GLOBAL STYLE ----
+st.markdown(
+    """
+    <style>
+    h1, h2, h3, h4, h5 {
+        color: #111827;
+    }
+
+    p, label, div {
+        color: #D4AF37;
+    }
+
+    .stButton>button {
+        background-color: #2563eb;
+        color: white !important;
+        border-radius: 6px;
+    }
+
+    .stMetric {
+        background-color: #f9fafb;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+with st.sidebar:
+    st.write("Here are some plots that summarize your sales data.")
+
+    st.write("📌 These statistics help you analyse performance and trends.")
+    st.markdown("---", unsafe_allow_html=True)
+
 st.title("📈 Sales Statistics")
 
 if not os.path.exists(FILE_PATH):
@@ -61,7 +95,7 @@ st.bar_chart(top_products.set_index('Product'))
 st.markdown("---")
 
 # Display full sales data
-st.subheader("📊 Quantity Sold per Product")
+st.subheader("📊 Sales Distribution by Product")
 
 quantity_sold = (
     df.groupby('product_name')['quantity']
@@ -71,8 +105,16 @@ quantity_sold = (
     .sort_values(by='Total Quantity Sold', ascending=False)
 )
 
-st.bar_chart(quantity_sold.set_index('Product'))
+#st.bar_chart(quantity_sold.set_index('Product'))
+import plotly.express as px
 
+fig = px.pie(
+    quantity_sold,
+    names="Product",
+    values="Total Quantity Sold",
+    #title="Sales Distribution by Product",
+    hole=0.3  # donut style (optional, looks professional)
+)
+
+st.plotly_chart(fig, use_container_width=True)
 st.markdown("---")
-
-st.caption("📌 These statistics help you analyse performance and trends.")
