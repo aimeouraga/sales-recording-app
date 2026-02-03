@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
-import base64
 
 
 # File path #D4AF37
@@ -109,9 +108,10 @@ if submit:
 st.markdown("---")
 st.subheader("📈 Sales Summary")
 
+col1, col2 = st.columns(2)
 if not df.empty:
-    st.metric("Total Sales Amount", f"{df['total_price'].sum():,.2f}")
-    st.metric("Number of Sales", len(df))
+    col1.metric("Total Sales Amount", f"{df['total_price'].sum():,.2f}")
+    col2.metric("Number of Sales", len(df))
 else:
     st.info("No sales recorded yet")
 
