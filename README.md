@@ -27,7 +27,7 @@ Each sale includes product name, quantity, unit price, and total price.
 The About page presents the application creator and purpose.
 
 ## 7. Data Storage
-All sales are stored in: data/sales.py
+All sales are stored in: data/sales.csv
 
 ## 8. Support
 For any issue, contact the application developer.
