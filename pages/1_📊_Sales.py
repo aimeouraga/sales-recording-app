@@ -118,5 +118,5 @@ else:
 # Display sales table
 st.markdown("---")
 st.subheader("🧾 Sales History")
-st.write("Tous les montants sont exprimés en francs CFA.")
+st.write("All amounts are expressed in CFA francs.")
 st.dataframe(df, use_container_width=True)
