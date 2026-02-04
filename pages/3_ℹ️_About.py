@@ -43,7 +43,7 @@ st.markdown(
     ### 📊 Sales Recording Application
 
     **Developed by:**  
-    **David OURAGA**  
+    **OURAGA AIME**  
     **Role:** Python Developer, DevOps Engineer  
 
     ---
