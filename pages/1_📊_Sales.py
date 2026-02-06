@@ -115,8 +115,38 @@ if not df.empty:
 else:
     st.info("No sales recorded yet")
 
-# Display sales table
+
+# ---- SALES TABLE DISPLAY CONTROL ----
+
+# Default selection
+if "sales_view" not in st.session_state:
+    st.session_state.sales_view = "First 10"
+
+# Title + dropdown layout
+col1, col2 = st.columns([4, 2])
+
+with col1:
+    st.subheader("🧾 Sales History")
+
+with col2:
+    st.session_state.sales_view = st.selectbox(
+        "View",
+        options=["First 10", "Last 10", "All"],
+        index=0,  
+        label_visibility="collapsed"
+    )
+
+# ---- DATA SELECTION ----
+if st.session_state.sales_view == "First 10":
+    display_df = df.head(10)
+
+elif st.session_state.sales_view == "Last 10":
+    display_df = df.tail(10)
+
+else:
+    display_df = df
+
+# ---- DISPLAY TABLE ----
 st.markdown("---")
-st.subheader("🧾 Sales History")
 st.write("All amounts are expressed in CFA francs.")
-st.dataframe(df, use_container_width=True)
+st.dataframe(display_df, use_container_width=True)
