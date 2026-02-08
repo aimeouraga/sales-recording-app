@@ -55,13 +55,15 @@ df['date'] = pd.to_datetime(df['date'])
 
 st.markdown("------------")
 
+df['product_name'] = df['product_name'].astype(str).str.strip().str.title()  # Standardize product names
+
 # Metrics
 st.subheader("📊 Key Metrics")
 col1, col2, col3 = st.columns(3)
 
 col1.metric("Total Sales Amount", f"{df['total_price'].sum():,.2f}")
-col2.metric("Number of Sales", len(df))
-col3.metric("Products Sold", df['product_name'].nunique())
+col2.metric("Products Sold", df['product_name'].nunique())
+col3.metric("Number of items sold", df['quantity'].sum())
 
 st.markdown("---")
 
