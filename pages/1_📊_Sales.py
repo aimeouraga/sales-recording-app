@@ -45,7 +45,6 @@ st.markdown(
 # Sidebar content
 with st.sidebar:
     st.markdown("<h2 style='text-align: center;'>📊 Sales App</h2>", unsafe_allow_html=True)
-    #st.write("Simple sales recording system.")
     st.write(
     """
     This **Sales Recording Application** allows merchants to easily:
