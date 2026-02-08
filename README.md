@@ -6,10 +6,23 @@ Each sale includes product name, quantity, unit price, and total price.
 
 ## 2. System Requirements
 - Windows / macOS / Linux
-- No internet required
+- Internet required
 
-## 3. How to Launch the Application
-- Double-click the executable file (app.exe)
+## 3. Running the Application Locally
+- Clone the repository
+    git clone <repository_url>
+
+- Navigate to the project directory
+    cd <project_directory>
+
+- Install the dependencies
+    pip install -r requirements.txt
+
+- Start the Streamlit application
+    streamlit run 🚀_Application.py
+
+Once the application starts, a local URL will be displayed in the terminal (usually http://localhost:8501).
+Open this link in your web browser to access the application.
 
 ## 4. How to Record a Sale
 1. Go to the "Sales" page
