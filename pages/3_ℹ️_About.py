@@ -65,8 +65,7 @@ st.markdown(
     ---
 
     ### 📌 Notes
-    This application is simple, lightweight, and does not require
-    an internet connection or database server.
+    This application is simple, lightweight.
 
     © 2026 — All rights reserved
     """
